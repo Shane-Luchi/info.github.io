@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网页</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0.2em 0;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 0.5em 0;
+        }
+        .interaction-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #f06, #48f);
+            background-size: 400% 400%;
+            transition: background-position 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="interaction-bg" id="interaction-bg"></div>
+    <div class="container">
+        <h1>欢迎来到我的个人网页</h1>
+        <p>我是[你的名字]，欢迎了解我更多的信息。</p>
+        <section>
+            <h2>关于我</h2>
+            <p>这里是我的基本情况介绍。</p>
+        </section>
+        <section>
+            <h2>爱好与兴趣</h2>
+            <p>我喜欢极简主义设计，热爱编程和阅读。</p>
+        </section>
+        <section>
+            <h2>联系方式</h2>
+            <p>你可以通过以下方式联系我：</p>
+            <ul>
+                <li>电子邮件：[你的邮箱]</li>
+                <li>社交媒体：[你的社交媒体链接]</li>
+            </ul>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const interactionBg = document.getElementById('interaction-bg');
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            interactionBg.style.backgroundPosition = `${x}% ${y}%`;
+        });
+    </script>
+</body>
+</html>
